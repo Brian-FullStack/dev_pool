@@ -7,7 +7,7 @@ if os.path.exists("env.py"):
 app = Flask(__name__)
 
 
-app.route("/")
+@app.route("/")
 def test():
     return "Success!! You Flask app is working correctly!"
 
