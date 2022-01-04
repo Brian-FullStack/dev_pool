@@ -11,9 +11,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <!--CSS Stylesheet-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    {% block styles %}
+    {% endblock %}
     <title>Dev Pool</title>
 </head>
 <body>
+
+    <header>
+
+        <!--Top Navbar-->
+        <!--Code from: https://materializecss.com/color.html-->
+        <nav class="nav-extended text-shadow teal darken-4">
+            <div class="nav-wrapper">
+              <a href="{{url_for('get_assets')}}" class="brand-logo">Dev Pool</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+              <ul class="right hide-on-med-and-down">
+                <li><a href="{{url_for('get_assets')}}">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Create Asset</a></li>
+                <li><a href="#">Manage Categories</a></li>
+                <li><a href="#">Log Out</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Register</a></li>
+              </ul>
+            </div>
+          </nav>
+        
+          <!--Mobile Side Navbar-->
+          <ul class="sidenav grey darken-3 text-shadow" id="mobile-demo">
+            <li><h4 class="center-align teal-text darken-4">Dev Pool</h4></li>
+            <li><a class="grey-text" href="{{url_for('get_assets')}}">Home</a></li>
+                <li><a class="grey-text" href="#">Profile</a></li>
+                <li><a class="grey-text" href="#">Create Asset</a></li>
+                <li><a class="grey-text" href="#">Manage Categories</a></li>
+                <li><a class="grey-text" href="#">Log Out</a></li>
+                <li><a class="grey-text" href="#">Log In</a></li>
+                <li><a class="grey-text" href="#">Register</a></li>
+          </ul>
+    </header>
     
     <h1>Dev Pool</h1>
     {% block content %}
@@ -30,5 +65,7 @@ integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="ano
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!--JS Scripts-->
 <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+{% block scripts %}
+{% endblock %}
 </body>
 </html>
