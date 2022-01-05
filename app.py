@@ -21,6 +21,7 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
 
+
 @app.route("/")
 @app.route("/get_assets")
 def get_assets():
@@ -28,8 +29,28 @@ def get_assets():
     return render_template('assets.html', assets=assets)
 
 
-@app.route("/register")
+@app.route("/register", methods=["GET", "POST"])
 def register():
+    if request.method == "POST":
+        # Check if user already exists in the db
+        existing_user = mongo.db.users.find_one(
+           {"username": request.form.get("username").lower()})
+
+        # If username exists then display that to the user and refresh the page
+        if existing_user:
+            flash("Sorry, that username already exists.")
+            redirect(url_for("register"))
+
+        # Create a dictionary from the user inputs
+        new_user = {
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(new_user)
+
+        # Place the user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
     return render_template("register.html")
 
 
