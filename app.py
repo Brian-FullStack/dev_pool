@@ -53,6 +53,9 @@ def register():
         flash("Registration Successful!")
     return render_template("register.html")
 
+@app.route("/signIn", methods=["GET", "POST"])
+def signIn():
+    return render_template("signin.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
