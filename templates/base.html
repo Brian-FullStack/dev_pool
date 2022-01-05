@@ -50,7 +50,17 @@
           </ul>
     </header>
     
-    <h1>Dev Pool</h1>
+    <section>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <div class="row">
+              <h4 class="col s12 center-align">{{ message }}</h4>
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </section>
     {% block content %}
     {% endblock %}
 
