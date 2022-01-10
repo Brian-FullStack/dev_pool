@@ -101,6 +101,11 @@ def signOut():
     return redirect(url_for("signIn"))
 
 
+@app.route("/create_asset")
+def create_asset():
+    return render_template("create_asset.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
