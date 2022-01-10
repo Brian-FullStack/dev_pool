@@ -5,3 +5,35 @@
 .grey-text{
     color: #fff !important;
 }
+/* Card Styles*/
+.card {
+    background-color: #2D2327;
+    border: 2px solid #6DD3CE;
+    border-radius: 10px;
+    color: #F0E2E7;
+}
+
+.card .card-reveal{
+    background-color: #2D2327;
+    color: #F0E2E7;
+}
+
+.card-category{
+    margin: 10px 8px;
+}
+
+.card-image{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.btn-border{
+    background-color: #2D2327;
+    border: 2px solid #6DD3CE;
+    border-radius: 10px;
+    color: #F0E2E7;
+}
+
+.btn-color{
+    color: #6DD3CE;
+}

@@ -1,12 +1,55 @@
 {% extends "base.html" %}
     {% block content %}
     <h2>This is some asset data</h2>
-    {% for asset in assets %}
-        {{ asset.category_name }}<br>
-        {{ asset.asset_title }}<br>
-        {{ asset.asset_description }}<br>
-        {{ asset.asset_url }}<br>
-        {{ asset.date_added }}<br>
-    {% endfor %}
+    
 
+
+  <div class="container m8 offset-m2">
+    <div class="row">
+      {% for asset in assets %}
+        <div class="col s12 m4 14">
+            <div class="card">
+                <!--Card Category-->
+                <span class="card-category">
+                    {{ asset.category_name }}
+                </span>
+                <div class="card-image waves-effect waves-block waves-light">
+                    <!--Card Image-->
+                  <img class="activator center-align" src="{{ asset.asset_image }}">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator">
+                      <strong>{{ asset.asset_title }}</strong>
+                      <i class="fas fa-chevron-up btn-color right tooltipped"
+                      data-position="top" data-tooltip="Read More"></i>
+                    </span>
+                    <a class="btn btn-border" href="{{ asset.asset_url }}" target="_blank">
+                      <i class="fas fa-link"></i> Go to site
+                    </a>
+                </div>
+                <!--Card Reveal-->
+                <div class="card-reveal">
+                    <span class="card-title  center-align">
+                      {{ asset.asset_title }}
+                      <i class="fas fa-times right btn-color"></i>
+                    </span>
+                    <span>
+                      Category: {{ asset.category_name }}
+                    </span><br>
+                    <span>
+                      <p>About: {{ asset.asset_description }}</p>
+                    </span>
+                    <span>
+                      Added: {{ asset.date_added  }}
+                    </span><br>
+                    <a class="btn btn-border" href="{{ asset.asset_url }}" target="_blank">
+                      <i class="fas fa-link"></i> Go to site
+                    </a>
+                </div>
+              </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+   
     {% endblock %}
