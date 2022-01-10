@@ -5,8 +5,29 @@
 .grey-text{
     color: #fff !important;
 }
+
+/* Navbar */
+.nav-black{
+    background-color: #2D2327;
+    color: #F0E2E7;
+}
+
+.nav-btn{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-top: 15px;
+   margin-right: 15px;
+}
+
+.nav-link:hover{
+    text-decoration: underline;
+    text-decoration-color: #6DD3CE;
+    text-decoration-thickness: 2px;
+}
+
 /* Card Styles*/
-.card {
+.card, .card-panel{
     background-color: #2D2327;
     border: 2px solid #6DD3CE;
     border-radius: 10px;
@@ -34,6 +55,20 @@
     color: #F0E2E7;
 }
 
+.btn-solid{
+    background-color: #6DD3CE;
+    border: 2px solid #6DD3CE;
+    border-radius: 10px;
+    color: #2D2327;
+}
+.btn-solid a{
+    font-weight: 400;
+    color: #2D2327;
+    text-shadow: none;
+}
+
 .btn-color{
     color: #6DD3CE;
 }
+
+/* Forms */
