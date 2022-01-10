@@ -21,20 +21,20 @@
 
         <!--Top Navbar-->
         <!--Code from: https://materializecss.com/color.html-->
-        <nav class="nav-extended text-shadow teal darken-4">
+        <nav class="nav-extended text-shadow nav-black">
             <div class="nav-wrapper">
               <a href="{{url_for('get_assets')}}" class="brand-logo">Dev Pool</a>
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
-                <li><a href="{{url_for('get_assets')}}">Home</a></li>
+                <li class="nav-link"><a href="{{url_for('get_assets')}}">Home</a></li>
                 {% if session.user %}
-                  <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                  <li><a href="{{ url_for('create_asset') }}">Create Asset</a></li>
-                  <li><a href="#">Manage Categories</a></li>
-                  <li><a href="{{ url_for('signOut') }}">Sign Out</a></li>
+                  <li class="nav-link"><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                  <li class="nav-link"><a href="{{ url_for('create_asset') }}">Create Asset</a></li>
+                  <li class="nav-link"><a href="#">Manage Categories</a></li>
+                  <li class="nav-btn btn btn-border"><a href="{{ url_for('signOut') }}">Sign Out</a></li>
                 {% else %}
-                  <li><a href="{{ url_for('signIn') }}">Sign In</a></li>
-                  <li><a href="{{ url_for('register')}}">Register</a></li>
+                  <li class="nav-btn btn btn-border"><a href="{{ url_for('signIn') }}">Sign In</a></li>
+                  <li class="nav-btn btn btn-solid"><a href="{{ url_for('register')}}">Register</a></li>
                 {% endif %}
               </ul>
             </div>
