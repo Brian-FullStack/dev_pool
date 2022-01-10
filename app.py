@@ -103,7 +103,8 @@ def signOut():
 
 @app.route("/create_asset")
 def create_asset():
-    return render_template("create_asset.html")
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("create_asset.html", categories=categories)
 
 
 if __name__ == "__main__":
