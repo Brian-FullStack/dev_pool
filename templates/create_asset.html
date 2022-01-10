@@ -3,6 +3,62 @@
 
 <h4 class="center-align">Create New Asset</h4>
 
-
+<div class="row">
+    <form class="col s12">
+        <!-- Asset Title -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pen prefix btn-color"></i>
+                <input id="asset_title" name="asset_title" minlength="2" max="50" type="text" class="validate" required>
+                <label for="asset_title">Asset Name</label>
+            </div>
+        </div>
+        <!-- Categories Dropdown -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix btn-color"></i>
+                <select id="category_name" name="category_name" class="validate" required>
+                  <option value="" disabled selected>Select a Category</option>
+                    {% for category in categories %}
+                        <option value="{{ category.category_name}}">{{ category.category_name}}</option>
+                    {% endfor %}
+                </select>
+                <label for="category_name">Asset Category</label>
+            </div>
+        </div>
+        <!-- Asset Description -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pen prefix btn-color"></i>
+                <textarea id="asset_description" name="asset_description" minlength="10" maxlength="500" class="materialize-textarea validate" required></textarea>
+                <label for="asset_description">Tell us why this is such a useful site!</label>
+            </div>
+        </div>
+        <!-- Asset URL -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-link prefix btn-color"></i>
+                <input id="asset_url" name="asset_url" minlength="2" max="100" type="text" class="validate" required>
+                <label for="asset_url">Site URL</label>
+            </div>
+        </div>
+        <!-- Date Added -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="far fa-calendar-alt prefix btn-color"></i>
+                <input id="date_added" name="date_added" type="text" class=" datepicker validate" required>
+                <label for="date_added">Date Added</label>
+            </div>
+        </div>
+        <!-- Asset Image -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="far fa-image prefix btn-color"></i>
+                <input id="asset_image" name="asset_image" type="text" class="validate">
+                <label for="asset_image">Site Image (Optional: copy google image link)</label>
+            </div>
+        </div>
+    </form>
+  </div>
 
 {% endblock %}
