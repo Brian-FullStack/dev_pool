@@ -4,7 +4,6 @@
     
 
 
-  <div class="red">
     <div class="row">
       {% for asset in assets %}
         <div class="col s12 m3">
@@ -15,7 +14,11 @@
                 </span>
                 <div class="card-image waves-effect waves-block waves-light">
                     <!--Card Image-->
-                  <img class="activator center-align" src="{{ asset.asset_image }}">
+                  {% if asset.asset_image %}
+                    <img class="activator center-align" src="{{ asset.asset_image }}">
+                  {% else %}
+                    <img class="activator center-align" src="../static/images/DP_image_placeholder_black.png" alt="Dev Pool Logo">
+                  {% endif %}
                 </div>
                 <div class="card-content">
                     <span class="card-title activator">
@@ -23,7 +26,7 @@
                       <i class="fas fa-chevron-up btn-color right tooltipped"
                       data-position="top" data-tooltip="Read More"></i>
                     </span>
-                    <a class="btn btn-border" href="{{ asset.asset_url }}" target="_blank">
+                    <a class="btn btn-solid" href="{{ asset.asset_url }}" target="_blank">
                       <i class="fas fa-link"></i> Go to site
                     </a>
                 </div>
@@ -31,7 +34,7 @@
                 <div class="card-reveal">
                   <!-- Asset Title -->
                     <span class="card-title  center-align">
-                      {{ asset.asset_title }}
+                      <h5>{{ asset.asset_title }}</h5>
                       <i class="fas fa-chevron-down right btn-color"></i>
                     </span>
                     <!-- Category -->
@@ -39,13 +42,10 @@
                       Category: {{ asset.category_name }}
                     </span><br>
                     <!-- Asset Description -->
-                    <span>
+                    <div>
                       <p>About: {{ asset.asset_description }}</p>
-                    </span>
-                    <!-- Site Link -->
-                    <a class="btn btn-border" href="{{ asset.asset_url }}" target="_blank">
-                      <i class="fas fa-link"></i> Go to site
-                    </a>
+                    </div>
+                    <br>
                     <!-- Asset Creator -->
                     <span>
                       Shared By: {{ asset.asset_creator  }}
@@ -54,11 +54,16 @@
                     <span>
                       Added: {{ asset.date_added  }}
                     </span><br>
+                    <!-- Site Link -->
+                    <div>
+                      <a class="btn btn-solid" href="{{ asset.asset_url }}" target="_blank">
+                        <i class="fas fa-link"></i> Go to site
+                      </a>
+                  </div>
                 </div>
               </div>
         </div>
       {% endfor %}
     </div>
-  </div>
    
     {% endblock %}
