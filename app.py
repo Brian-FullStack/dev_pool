@@ -122,6 +122,13 @@ def create_asset():
     return render_template("create_asset.html", categories=categories)
 
 
+@app.route("/edit_asset/<asset_id>", methods=["GET", "POST"])
+def edit_asset(asset_id):
+    asset = mongo.db.assets.find_one("_id")
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template("edit_asset.html", asset=asset)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
