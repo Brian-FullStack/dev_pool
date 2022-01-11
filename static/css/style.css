@@ -103,3 +103,6 @@ justify-content: space-between;
 }
 
 /* Forms */
+form input{
+    color: #F0E2E7;
+}
