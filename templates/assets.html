@@ -1,13 +1,13 @@
 {% extends "base.html" %}
     {% block content %}
-    <h2>This is some asset data</h2>
+    <h2 class="center-align">Explore</h2>
     
 
 
-  <div class="container m8 offset-m2">
+  <div class="red">
     <div class="row">
       {% for asset in assets %}
-        <div class="col s12 m4 14">
+        <div class="col s12 m3">
             <div class="card">
                 <!--Card Category-->
                 <span class="card-category">
@@ -29,22 +29,31 @@
                 </div>
                 <!--Card Reveal-->
                 <div class="card-reveal">
+                  <!-- Asset Title -->
                     <span class="card-title  center-align">
                       {{ asset.asset_title }}
-                      <i class="fas fa-times right btn-color"></i>
+                      <i class="fas fa-chevron-down right btn-color"></i>
                     </span>
+                    <!-- Category -->
                     <span>
                       Category: {{ asset.category_name }}
                     </span><br>
+                    <!-- Asset Description -->
                     <span>
                       <p>About: {{ asset.asset_description }}</p>
                     </span>
-                    <span>
-                      Added: {{ asset.date_added  }}
-                    </span><br>
+                    <!-- Site Link -->
                     <a class="btn btn-border" href="{{ asset.asset_url }}" target="_blank">
                       <i class="fas fa-link"></i> Go to site
                     </a>
+                    <!-- Asset Creator -->
+                    <span>
+                      Shared By: {{ asset.asset_creator  }}
+                    </span><br>
+                    <!-- Asset Date -->
+                    <span>
+                      Added: {{ asset.date_added  }}
+                    </span><br>
                 </div>
               </div>
         </div>
