@@ -8,10 +8,13 @@
       {% for asset in assets %}
         <div class="col s12 m3">
             <div class="card">
-                <!--Card Category-->
-                <span class="card-category">
-                    {{ asset.category_name }}
-                </span>
+                <!--Card Category and Edit-->
+                <div class="card-header">
+                  <span class="card-category">
+                      {{ asset.category_name }}
+                  </span>
+                  <a href="" class="btn-edit">Edit</a>
+                </div>
                 <div class="card-image waves-effect waves-block waves-light">
                     <!--Card Image-->
                   {% if asset.asset_image %}

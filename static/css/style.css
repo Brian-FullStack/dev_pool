@@ -39,8 +39,9 @@
     color: #F0E2E7;
 }
 
-.card{
-    height: 100%;
+.card-reveal h5{
+    margin-top: 0;
+    padding-top: 1em;
 }
 
 .card-category{
@@ -78,6 +79,27 @@
 
 .btn-color{
     color: #6DD3CE;
+}
+
+.btn-edit{
+    margin-right: 1em;
+    color: #F0E2E7;
+    border: 1px solid #6DD3CE;
+    border-radius: 5px;
+    padding: 2px 3px;
+}
+
+.btn-edit:hover{
+    color: #2D2327;
+    background-color: #6DD3CE;
+    transition: 500ms;
+}
+
+.card-header{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+justify-content: space-between;
 }
 
 /* Forms */
