@@ -101,8 +101,23 @@ def signOut():
     return redirect(url_for("signIn"))
 
 
-@app.route("/create_asset")
+@app.route("/create_asset", methods=["GET", "POST"])
 def create_asset():
+    if request.method == "POST":
+        asset = {
+            "category_name": request.form.get("category_name"),
+            "asset_title": request.form.get("asset_title"),
+            "asset_description": request.form.get("asset_description"),
+            "asset_url": request.form.get("asset_url"),
+            "date_added": request.form.get("date_added"),
+            "asset_image": request.form.get("asset_image"),
+            "asset_creator": session["user"]
+        }
+        mongo.db.assets.insert_one(asset)
+        flash("Thank you for sharing {}, with Dev Pool".format(
+            request.form.get("asset_title")))
+        return redirect(url_for('get_assets'))
+
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("create_asset.html", categories=categories)
 
