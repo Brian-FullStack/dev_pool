@@ -13,7 +13,7 @@
                   <span class="card-category">
                       {{ asset.category_name }}
                   </span>
-                  <a href="" class="btn-edit">Edit</a>
+                  <a href="{{ url_for('edit_asset', asset_id=asset._id) }}" class="btn-edit">Edit</a>
                 </div>
                 <div class="card-image waves-effect waves-block waves-light">
                     <!--Card Image-->
