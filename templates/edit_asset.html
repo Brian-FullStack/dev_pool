@@ -9,7 +9,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pen prefix btn-color"></i>
-                <input id="asset_title" name="asset_title" minlength="2" max="50" type="text" class="validate" required>
+                <input id="asset_title" name="asset_title" value="{{ asset.asset_title }}" minlength="2" max="50" type="text" class="validate" required>
                 <label for="asset_title">Asset Name</label>
             </div>
         </div>
@@ -18,9 +18,13 @@
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix btn-color"></i>
                 <select id="category_name" name="category_name" class="validate" required>
-                  <option value="" disabled selected>Select a Category</option>
+                  <option value="" disabled>Select a Category</option>
                     {% for category in categories %}
-                        <option value="{{ category.category_name}}">{{ category.category_name}}</option>
+                        {% if category.category_name == asset.category_name %}
+                            <option value="{{ category.category_name}}" selected>{{ category.category_name}}</option>
+                        {% else %}
+                            <option value="{{ category.category_name}}">{{ category.category_name}}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
                 <label for="category_name">Asset Category</label>
@@ -30,7 +34,9 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-pen prefix btn-color"></i>
-                <textarea id="asset_description" name="asset_description" minlength="10" maxlength="500" class="materialize-textarea validate" required></textarea>
+                <textarea id="asset_description" name="asset_description" minlength="10" maxlength="500" class="materialize-textarea validate" required>
+                    {{- asset.asset_description -}}
+                </textarea>
                 <label for="asset_description">Tell us why this is such a useful site!</label>
             </div>
         </div>
@@ -38,7 +44,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-link prefix btn-color"></i>
-                <input id="asset_url" name="asset_url" minlength="2" max="100" type="text" class="validate" required>
+                <input id="asset_url" name="asset_url" value="{{ asset.asset_url }}" minlength="2" max="100" type="text" class="validate" required>
                 <label for="asset_url">Site URL</label>
             </div>
         </div>
@@ -46,7 +52,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="far fa-calendar-alt prefix btn-color"></i>
-                <input id="date_added" name="date_added" type="text" class=" datepicker validate" required>
+                <input id="date_added" name="date_added" value="{{ asset.date_added }}" type="text" class=" datepicker validate" required>
                 <label for="date_added">Date Added</label>
             </div>
         </div>
@@ -54,13 +60,19 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="far fa-image prefix btn-color"></i>
-                <input id="asset_image" name="asset_image" type="text" class="validate">
-                <label for="asset_image">Site Image (Optional: copy google image link)</label>
+                {% if asset.asset_image %}
+                    <input id="asset_image" name="asset_image" value="{{ asset.asset_image }}" type="text" class="validate">
+                    <label for="asset_image">Site Image (Optional: copy google image link)</label>
+                {% else %}
+                    <input id="asset_image" name="asset_image" placeholder="No Site Image Provided" type="text" class="validate">
+                    <label for="asset_image">Site Image (Optional: copy google image link)</label>
+                {% endif %}
             </div>
         </div>
         <!-- Submit Button -->
         <div class="row">
             <div class="col s12 center-align">
+                <a href="{{ url_for('get_assets') }}" class="btn btn-solid-red">Cancel Edit</a>
                 <button type="submit" class="btn btn-solid">
                     Create Asset
                 </button>
