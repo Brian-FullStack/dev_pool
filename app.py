@@ -124,9 +124,9 @@ def create_asset():
 
 @app.route("/edit_asset/<asset_id>", methods=["GET", "POST"])
 def edit_asset(asset_id):
-    asset = mongo.db.assets.find_one("_id")
+    asset = mongo.db.assets.find_one({"_id": ObjectId(asset_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_asset.html", asset=asset)
+    return render_template("edit_asset.html", asset=asset, categories=categories)
 
 
 if __name__ == "__main__":
