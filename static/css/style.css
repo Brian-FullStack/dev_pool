@@ -103,6 +103,18 @@ justify-content: space-between;
 }
 
 /* Forms */
-form input{
+form input, form textarea{
     color: #F0E2E7;
+}
+
+.btn-solid-red{
+    background-color: #2D2327;
+    border: 2px solid #d71f53;
+    border-radius: 10px;
+    color: #F0E2E7;
+}
+
+.btn-solid-red:hover{
+    background-color: #d71f53;
+    transition: 500ms;
 }
