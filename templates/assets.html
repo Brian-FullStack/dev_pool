@@ -26,7 +26,9 @@
                   <span class="card-category">
                       {{ asset.category_name }}
                   </span>
-                  <a href="{{ url_for('edit_asset', asset_id=asset._id) }}" class="btn-edit">Edit</a>
+                  {% if session.user|lower == asset.asset_creator|lower %}
+                    <a href="{{ url_for('edit_asset', asset_id=asset._id) }}" class="btn-edit">Edit</a>
+                  {% endif %}
                 </div>
                 <div class="card-image waves-effect waves-block waves-light">
                     <!--Card Image-->
