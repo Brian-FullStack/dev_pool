@@ -86,7 +86,6 @@ def signIn():
     return render_template("signin.html")
 
 
-
 @app.route("/profile/<username>")
 def profile(username):
     username = mongo.db.users.find_one(
@@ -124,9 +123,25 @@ def create_asset():
 
 @app.route("/edit_asset/<asset_id>", methods=["GET", "POST"])
 def edit_asset(asset_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "asset_title": request.form.get("asset_title"),
+            "asset_description": request.form.get("asset_description"),
+            "asset_url": request.form.get("asset_url"),
+            "date_added": request.form.get("date_added"),
+            "asset_image": request.form.get("asset_image"),
+            "asset_creator": session["user"]
+        }
+        mongo.db.assets.update_one({"_id": ObjectId(asset_id)}, {"$set": submit})
+        flash("{} Updated Successfully".format(
+            request.form.get("asset_title")))
+        return redirect(url_for('get_assets'))
+
     asset = mongo.db.assets.find_one({"_id": ObjectId(asset_id)})
     categories = mongo.db.categories.find().sort("category_name", 1)
-    return render_template("edit_asset.html", asset=asset, categories=categories)
+    return render_template(
+        "edit_asset.html", asset=asset, categories=categories)
 
 
 if __name__ == "__main__":
