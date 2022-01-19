@@ -86,11 +86,13 @@ def signIn():
     return render_template("signin.html")
 
 
-@app.route("/profile/<username>")
+@app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-    return render_template("profile.html", username=username)
+    assets = list(mongo.db.assets.find(
+        {"asset_creator": session["user"]}))
+    return render_template("profile.html", username=username, assets=assets)
 
 
 @app.route("/signOut")
@@ -133,7 +135,8 @@ def edit_asset(asset_id):
             "asset_image": request.form.get("asset_image"),
             "asset_creator": session["user"]
         }
-        mongo.db.assets.update_one({"_id": ObjectId(asset_id)}, {"$set": submit})
+        mongo.db.assets.update_one(
+            {"_id": ObjectId(asset_id)}, {"$set": submit})
         flash("{} Updated Successfully".format(
             request.form.get("asset_title")))
         return redirect(url_for('get_assets'))
