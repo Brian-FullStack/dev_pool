@@ -144,6 +144,13 @@ def edit_asset(asset_id):
         "edit_asset.html", asset=asset, categories=categories)
 
 
+@app.route("/delete_asset/<asset_id>")
+def delete_asset(asset_id):
+    mongo.db.assets.delete_one({"_id": ObjectId(asset_id)})
+    flash("Asset has been sucessfully deleted!")
+    return redirect(url_for("get_assets"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
