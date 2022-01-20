@@ -72,7 +72,7 @@
         <!-- Submit Button -->
         <div class="row">
             <div class="col s12 center-align">
-                <a href="{{ url_for('get_assets') }}" class="btn btn-solid-red">Cancel Edit</a>
+                <a href="{{ url_for('get_assets') }}" class="btn btn-border">Cancel Edit</a>
                 <button type="submit" class="btn btn-solid">
                     Edit Asset
                 </button>
@@ -81,7 +81,16 @@
         <!-- Delete Button -->
         <div class="row">
             <div class="col s12 center-align">
-                <a href="{{ url_for('delete_asset', asset_id=asset._id) }}" class="btn btn-solid-red">Delete Asset</a>
+                <!-- Modal Trigger -->  
+                <a class="btn-solid-red btn modal-trigger" href="#modal1">Delete Asset</a>
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h4>Are you sure you want to delete:</h4>
+                        <p>{{ asset.asset_title }} ?</p>
+                        <a href="{{ url_for('delete_asset', asset_id=asset._id) }}" class="btn btn-solid-red modal-close">Delete Asset</a>
+                    </div>
+                </div>
             </div>
         </div>
     </form>
