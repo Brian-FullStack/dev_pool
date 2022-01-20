@@ -151,3 +151,16 @@ form input, form textarea{
     padding: 2.5em 2em;
     color: #F0E2E7;
 }
+
+/* Delete Modal */
+#modal1{
+    background-color: #2D2327;
+    border: 2px solid #d71f53;
+    border-radius: 10px;
+    color: #F0E2E7;
+}
+
+.modal-content p{
+    font-size: 30px;
+    text-decoration: underline;
+}
