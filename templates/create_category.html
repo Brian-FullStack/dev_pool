@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h4 class="center-align">Create New Category</h4>
+
+<div class="row form-card-panel">
+    <form class="col s12" method="POST" action="{{ url_for('create_category') }}">
+        <!-- Asset Title -->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pen prefix btn-color"></i>
+                <input id="category_name" name="category_name" minlength="2" max="50" type="text" class="validate" required>
+                <label for="category_name">Category Name</label>
+            </div>
+        </div>
+        <!-- Submit Button -->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button type="submit" class="btn btn-solid">
+                    Create Category
+                </button>
+            </div>
+        </div>
+    </form>
+  </div>
+
+{% endblock %}
