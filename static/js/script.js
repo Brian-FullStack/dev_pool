@@ -1,4 +1,4 @@
-/**Code from: https://materializecss.com/navbar.html */
+/** Code from: https://materializecss.com/navbar.html */
 /** Side navigation*/
 $(document).ready(function(){
     $('.sidenav').sidenav({edge: 'right'});
@@ -22,6 +22,10 @@ $(document).ready(function(){
   });
 });
 
+/** Modal Initialization */
+$(document).ready(function(){
+  $('.modal').modal();
+});
 
 /** Fix Materialize select element validation issue, code from: Code Institute Mini Project */
 validateMaterializeSelect();
