@@ -157,7 +157,7 @@ def delete_asset(asset_id):
 @app.route("/list_categories")
 def list_categories():
     categories = list(mongo.db.categories.find().sort("categories", 1))
-    return render_template("create_category.html", categories=categories)
+    return render_template("categories.html", categories=categories)
 
 
 if __name__ == "__main__":
