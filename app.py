@@ -156,7 +156,7 @@ def delete_asset(asset_id):
 
 @app.route("/list_categories")
 def list_categories():
-    categories = list(mongo.db.categories.find().sort("categories", 1))
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
 
@@ -185,6 +185,13 @@ def edit_category(category_id):
 
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
+
+
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
+    flash("Successfully Deleted!")
+    return redirect(url_for("list_categories"))
 
 
 if __name__ == "__main__":
