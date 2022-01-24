@@ -30,7 +30,7 @@
                 {% if session.user %}
                   <li class="nav-link"><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                   <li class="nav-link"><a href="{{ url_for('create_asset') }}">Create Asset</a></li>
-                  <li class="nav-link"><a href="{{ url_for('create_category') }}">Manage Categories</a></li>
+                  <li class="nav-link"><a href="{{ url_for('list_categories') }}">Manage Categories</a></li>
                   <li class="nav-btn btn btn-border"><a href="{{ url_for('signOut') }}">Sign Out</a></li>
                 {% else %}
                   <li class="nav-btn btn btn-border"><a href="{{ url_for('signIn') }}">Sign In</a></li>
@@ -47,7 +47,7 @@
             {% if session.user %}
               <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
               <li><a href="{{ url_for('create_asset') }}">Create Asset</a></li>
-              <li><a href="{{ url_for('create_category') }}">Manage Categories</a></li>
+              <li><a href="{{ url_for('list_categories') }}">Manage Categories</a></li>
               <li><a href="{{ url_for('signOut') }}">Sign Out</a></li>
             {% else %}
               <li><a href="{{ url_for('signIn') }}">Sign In</a></li>
