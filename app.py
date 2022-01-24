@@ -175,6 +175,14 @@ def create_category():
 
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
+    if request.method == "POST":
+        submit_edit = {
+            "category_name": request.form.get("category_name")
+        }
+        mongo.db.categories.update_one({"_id": ObjectId(category_id)}, {"$set": submit_edit})
+        flash("Category Successfully Edited")
+        return redirect(url_for('list_categories'))
+
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     return render_template("edit_category.html", category=category)
 
