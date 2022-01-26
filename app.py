@@ -29,6 +29,13 @@ def get_assets():
     return render_template('assets.html', assets=assets)
 
 
+@app.route("/search_assets", methods=["GET", "POST"])
+def search_assets():
+    db_query = request.form.get("db_query")
+    assets = list(mongo.db.assets.find({"$text": {"$search": db_query}}))
+    return render_template('assets.html', assets=assets)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
