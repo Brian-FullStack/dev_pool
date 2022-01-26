@@ -48,6 +48,20 @@
     margin-left: 7rem;
 }
 
+/* Home Page Search Area */
+.add-asset-btn a{
+    font-size: 25px;
+    color: #2D2327;
+}
+
+.input-field i{
+    color: #2D2327;
+}
+
+.search-bar{
+    color: #2D2327;
+}
+
 /* Card Styles*/
 .card, .card-panel{
     background-color: #2D2327;
@@ -80,8 +94,9 @@
     height: 80%;
 }
 
+/* Buttons */
 .btn-border{
-    background-color: #2D2327;
+    background-color: transparent;
     border: 2px solid #6DD3CE;
     border-radius: 10px;
     color: #F0E2E7;
