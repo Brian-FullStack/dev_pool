@@ -1,124 +1,133 @@
-.text-shadow{
+.text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
 }
 
-.grey-text{
+.grey-text {
     color: #fff !important;
 }
 
 /* Navbar */
-.nav-black{
+.nav-black {
     background-color: #2D2327;
     color: #F0E2E7;
 }
 
-.nav-btn{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   margin-top: 15px;
-   margin-right: 15px;
+.nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-right: 15px;
 }
 
-.nav-link:hover{
+.nav-link:hover {
     text-decoration: underline;
     text-decoration-color: #6DD3CE;
     text-decoration-thickness: 2px;
 }
 
 /* Hero Container */
-.container{
+.container {
     width: 100%;
     margin: 0 auto;
-    max-width: 100%;    
+    max-width: 100%;
 }
 
-.hero-container{
+.hero-container {
     background-color: #2D2327;
     width: 100%;
     height: 80vh;
     color: #F0E2E7;
 }
 
-.hero-title{
+.hero-title {
     margin: 5rem 7rem;
 }
 
-.hero-btns{
+.hero-btns {
     margin-left: 7rem;
 }
 
 /* Home Page Search Area */
-.add-asset-btn a{
+.add-asset-btn a {
     font-size: 25px;
     color: #2D2327;
 }
 
-.input-field i{
+.input-field i {
     color: #2D2327;
 }
 
-.search-bar{
+.search-bar {
     color: #2D2327;
 }
 
 /* Card Styles*/
-.card, .card-panel{
+.card {
+    display: flex;
+    flex-direction: column;
+    min-height: 372px;
+}
+
+.card,
+.card-panel {
     background-color: #2D2327;
     border: 2px solid #6DD3CE;
     border-radius: 10px;
     color: #F0E2E7;
 }
 
-.card .card-reveal{
+.card .card-reveal {
     background-color: #2D2327;
     color: #F0E2E7;
 }
 
-.card-reveal h5{
+.card-reveal h5 {
     margin-top: 0;
     padding-top: 1em;
 }
 
-.card-category{
+.card-category {
     margin: 10px 8px;
 }
 
-.card-image{
+.card-image {
     width: 80%;
     height: 50%;
     margin: 0 auto;
 }
 
-.card-image img{
-    height: 80%;
+.card-image img {
+    min-height: 200px;
+    max-height: 200px;
 }
 
 /* Buttons */
-.btn-border{
+.btn-border {
     background-color: transparent;
     border: 2px solid #6DD3CE;
     border-radius: 10px;
     color: #F0E2E7;
 }
 
-.btn-solid{
+.btn-solid {
     background-color: #6DD3CE;
     border: 2px solid #6DD3CE;
     border-radius: 10px;
     color: #2D2327;
 }
-.btn-solid a{
+
+.btn-solid a {
     font-weight: 400;
     color: #2D2327;
     text-shadow: none;
 }
 
-.btn-color{
+.btn-color {
     color: #6DD3CE;
 }
 
-.btn-edit{
+.btn-edit {
     margin-right: 1em;
     color: #F0E2E7;
     border: 1px solid #6DD3CE;
@@ -126,39 +135,40 @@
     padding: 2px 3px;
 }
 
-.btn-edit:hover{
+.btn-edit:hover {
     color: #2D2327;
     background-color: #6DD3CE;
     transition: 500ms;
 }
 
-.card-header{
+.card-header {
     display: flex;
     flex-direction: row;
     align-items: baseline;
-justify-content: space-between;
+    justify-content: space-between;
 }
 
 /* Forms */
-form input, form textarea{
+form input,
+form textarea {
     color: #F0E2E7;
 }
 
-.btn-solid-red{
+.btn-solid-red {
     background-color: #2D2327;
     border: 2px solid #d71f53;
     border-radius: 10px;
     color: #F0E2E7;
 }
 
-.btn-solid-red:hover{
+.btn-solid-red:hover {
     background-color: #d71f53;
     transition: 500ms;
 }
 
 /* Edit Page */
 
-.form-card-panel{
+.form-card-panel {
     width: 70%;
     background-color: #2D2327;
     border: 2px solid #6DD3CE;
@@ -168,14 +178,14 @@ form input, form textarea{
 }
 
 /* Delete Modal */
-.modal{
+.modal {
     background-color: #2D2327;
     border: 2px solid #d71f53;
     border-radius: 10px;
     color: #F0E2E7;
 }
 
-.modal-content p{
+.modal-content p {
     font-size: 30px;
     text-decoration: underline;
 }
