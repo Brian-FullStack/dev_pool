@@ -1,114 +1,114 @@
 {% extends "base.html" %}
-    {% block content %}
-    
-    <div class="hero-container">
+{% block content %}
+
+<div class="hero-container">
+  <div class="row">
+    <div class="col m6 ">
+      <h1 class="hero-title">Tools Created For Your Imagination</h1>
       <div class="row">
-        <div class="col m6 ">
-          <h1 class="hero-title">Tools Created For Your Imagination</h1>
-          <div class="row">
-            <div class="col s6">
-              <a href="{{ url_for('signIn') }}" class="btn btn-border">Sign In</a>
-              <a href="{{ url_for('register')}}" class="btn btn-solid">Register</a>
-            </div>
-          </div>
+        <div class="col s6">
+          <a href="{{ url_for('signIn') }}" class="btn btn-border">Sign In</a>
+          <a href="{{ url_for('register')}}" class="btn btn-solid">Register</a>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <h2 class="center-align">Explore</h2>
+<h2 class="center-align">Explore</h2>
 
-    
-    <div class="row ">
-      <form action="{{ url_for('search_assets') }}" method="POST" class="col s12 m8">
-        <div class="row valign-wrapper center-align">
-          <!-- Add Asset Button-->
-          {% if session.user %}
-            <div class="col s12 m6 add-asset-btn">
-              <a href="{{ url_for('create_asset') }}">
-                <i class="fas fa-plus btn-color"></i>
-                Add Asset
-              </a>
-            </div>
-          {% endif %}
-          <!-- Search Bar -->
-          <!-- Input -->
-          <div class="input-field col s12 m6">
-            <i class="fas fa-search prefix"></i>
-            <input type="text" name="db_query" id="db_query" minlength="2" class="validate search-bar" placeholder="E.g VS Code, Tailwind, Unsplash" required>
-            <label for="db_query">Search</label>
-          </div>
-          <!-- Search Clear Buttons -->
-          <button type="submit" class="btn btn-border"><i class="fas fa-search btn-color"></i></button>
-          <a href="{{ url_for('get_assets') }}" class="btn btn-solid-red">Clear</a>
-        </div>
-      </form>
+
+<div class="row ">
+  <form action="{{ url_for('search_assets') }}" method="POST" class="col s12 m8">
+    <div class="row valign-wrapper center-align">
+      <!-- Add Asset Button-->
+      {% if session.user %}
+      <div class="col s12 m6 add-asset-btn">
+        <a href="{{ url_for('create_asset') }}">
+          <i class="fas fa-plus btn-color"></i>
+          Add Asset
+        </a>
+      </div>
+      {% endif %}
+      <!-- Search Bar -->
+      <!-- Input -->
+      <div class="input-field col s12 m6">
+        <i class="fas fa-search prefix"></i>
+        <input type="text" name="db_query" id="db_query" minlength="2" class="validate search-bar"
+          placeholder="E.g VS Code, Tailwind, Unsplash" required>
+        <label for="db_query">Search</label>
+        <!-- Search Clear Buttons -->
+        <button type="submit" class="btn btn-border"><i class="fas fa-search btn-color"></i></button>
+        <a href="{{ url_for('get_assets') }}" class="btn btn-solid-red">Clear</a>
+      </div>
     </div>
+  </form>
+</div>
 
-    <div class="row">
-      {% for asset in assets %}
-        <div class="col s12 m3">
-            <div class="card">
-                <!--Card Category and Edit-->
-                <div class="card-header">
-                  <span class="card-category">
-                      {{ asset.category_name }}
-                  </span>
-                  {% if session.user|lower == asset.asset_creator|lower %}
-                    <a href="{{ url_for('edit_asset', asset_id=asset._id) }}" class="btn-edit">Edit</a>
-                  {% endif %}
-                </div>
-                <div class="card-image waves-effect waves-block waves-light">
-                    <!--Card Image-->
-                  {% if asset.asset_image %}
-                    <img class="activator center-align" src="{{ asset.asset_image }}">
-                  {% else %}
-                    <img class="activator center-align" src="../static/images/DP_image_placeholder_black.png" alt="Dev Pool Logo">
-                  {% endif %}
-                </div>
-                <div class="card-content">
-                    <span class="card-title activator">
-                      <strong>{{ asset.asset_title }}</strong>
-                      <i class="fas fa-chevron-up btn-color right tooltipped"
-                      data-position="top" data-tooltip="Read More"></i>
-                    </span>
-                    <a class="btn btn-solid" href="{{ asset.asset_url }}" target="_blank">
-                      <i class="fas fa-link"></i> Go to site
-                    </a>
-                </div>
-                <!--Card Reveal-->
-                <div class="card-reveal">
-                  <!-- Asset Title -->
-                    <span class="card-title  center-align">
-                      <h5>{{ asset.asset_title }}</h5>
-                      <i class="fas fa-chevron-down right btn-color"></i>
-                    </span>
-                    <!-- Category -->
-                    <span>
-                      Category: {{ asset.category_name }}
-                    </span><br>
-                    <!-- Asset Description -->
-                    <div>
-                      <p>About: {{ asset.asset_description }}</p>
-                    </div>
-                    <br>
-                    <!-- Asset Creator -->
-                    <span>
-                      Shared By: {{ asset.asset_creator  }}
-                    </span><br>
-                    <!-- Asset Date -->
-                    <span>
-                      Added: {{ asset.date_added  }}
-                    </span><br>
-                    <!-- Site Link -->
-                    <div>
-                      <a class="btn btn-solid" href="{{ asset.asset_url }}" target="_blank">
-                        <i class="fas fa-link"></i> Go to site
-                      </a>
-                  </div>
-                </div>
-              </div>
+<div class="row">
+  {% for asset in assets %}
+  <div class="col s12 m4 l3 card-container">
+    <div class="card">
+      <!--Card Category and Edit-->
+      <div class="card-header">
+        <span class="card-category">
+          {{ asset.category_name }}
+        </span>
+        {% if session.user|lower == asset.asset_creator|lower %}
+        <a href="{{ url_for('edit_asset', asset_id=asset._id) }}" class="btn-edit">Edit</a>
+        {% endif %}
+      </div>
+      <div class="card-image waves-effect waves-block waves-light">
+        <!--Card Image-->
+        {% if asset.asset_image %}
+        <img class="activator center-align" src="{{ asset.asset_image }}">
+        {% else %}
+        <img class="activator center-align" src="../static/images/DP_image_placeholder_black.png" alt="Dev Pool Logo">
+        {% endif %}
+      </div>
+      <div class="card-content">
+        <span class="card-title activator">
+          <strong>{{ asset.asset_title }}</strong>
+          <i class="fas fa-chevron-up btn-color right tooltipped" data-position="top" data-tooltip="Read More"></i>
+        </span>
+        <a class="btn btn-solid" href="{{ asset.asset_url }}" target="_blank">
+          <i class="fas fa-link"></i> Go to site
+        </a>
+      </div>
+      <!--Card Reveal-->
+      <div class="card-reveal">
+        <!-- Asset Title -->
+        <span class="card-title  center-align">
+          <h5>{{ asset.asset_title }}</h5>
+          <i class="fas fa-chevron-down right btn-color"></i>
+        </span>
+        <!-- Category -->
+        <span>
+          Category: {{ asset.category_name }}
+        </span><br>
+        <!-- Asset Description -->
+        <div>
+          <p>About: {{ asset.asset_description }}</p>
         </div>
-      {% endfor %}
+        <br>
+        <!-- Asset Creator -->
+        <span>
+          Shared By: {{ asset.asset_creator  }}
+        </span><br>
+        <!-- Asset Date -->
+        <span>
+          Added: {{ asset.date_added  }}
+        </span><br>
+        <!-- Site Link -->
+        <div>
+          <a class="btn btn-solid" href="{{ asset.asset_url }}" target="_blank">
+            <i class="fas fa-link"></i> Go to site
+          </a>
+        </div>
+      </div>
     </div>
-   
-    {% endblock %}
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
