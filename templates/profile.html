@@ -4,83 +4,91 @@
 <h3 class="center-align capitalize">{{ username }}'s Profile</h3>
 
 {% if assets|length > 0 %}
-<!--Form inputs from Materialize Css-->
-<div class="row">
-  {% for asset in assets if session.user|lower == asset.asset_creator|lower %}
-  <div class="col s12 m3">
-    <div class="card">
-      <!--Card Category and Edit-->
-      <div class="card-header">
-        <span class="card-category">
-          {{ asset.category_name }}
-        </span>
-        <a href="{{ url_for('edit_asset', asset_id=asset._id) }}" class="btn-edit">Edit</a>
-      </div>
-      <div class="card-image waves-effect waves-block waves-light">
-        <!--Card Image-->
-        {% if asset.asset_image %}
-        <img class="activator center-align" src="{{ asset.asset_image }}">
-        {% else %}
-        <img class="activator center-align" src="../static/images/DP_image_placeholder_black.png" alt="Dev Pool Logo">
-        {% endif %}
-      </div>
-      <div class="card-content">
-        <span class="card-title activator">
-          <strong>{{ asset.asset_title }}</strong>
-          <i class="fas fa-chevron-up btn-color right tooltipped" data-position="top" data-tooltip="Read More"></i>
-        </span>
-        <a class="btn btn-solid" href="{{ asset.asset_url }}" target="_blank">
-          <i class="fas fa-link"></i> Go to site
-        </a>
-      </div>
-      <!--Card Reveal-->
-      <div class="card-reveal">
-        <!-- Asset Title -->
-        <span class="card-title  center-align">
-          <h5>{{ asset.asset_title }}</h5>
-          <i class="fas fa-chevron-down right btn-color"></i>
-        </span>
-        <!-- Category -->
-        <span>
-          Category: {{ asset.category_name }}
-        </span><br>
-        <!-- Asset Description -->
-        <div>
-          <p>About: {{ asset.asset_description }}</p>
+  <!--Form inputs from Materialize Css-->
+  <h5 class="center-align">You've shared {{ assets|length }} assets with the Dev Pool.</h4>
+    <div class="col s12 m6 add-asset-btn center-align">
+      <a href="{{ url_for('create_asset') }}">
+        <i class="fas fa-plus btn-color"></i>
+        Add Asset
+      </a>
+    </div>
+
+  <!-- Users Assets -->
+  <div class="row">
+    {% for asset in assets if session.user|lower == asset.asset_creator|lower %}
+    <div class="col s12 m3">
+      <div class="card">
+        <!--Card Category and Edit-->
+        <div class="card-header">
+          <span class="card-category">
+            {{ asset.category_name }}
+          </span>
+          <a href="{{ url_for('edit_asset', asset_id=asset._id) }}" class="btn-edit">Edit</a>
         </div>
-        <br>
-        <!-- Asset Creator -->
-        <span>
-          Shared By: {{ asset.asset_creator  }}
-        </span><br>
-        <!-- Asset Date -->
-        <span>
-          Added: {{ asset.date_added  }}
-        </span><br>
-        <!-- Site Link -->
-        <div>
+        <div class="card-image waves-effect waves-block waves-light">
+          <!--Card Image-->
+          {% if asset.asset_image %}
+          <img class="activator center-align" src="{{ asset.asset_image }}">
+          {% else %}
+          <img class="activator center-align" src="../static/images/DP_image_placeholder_black.png" alt="Dev Pool Logo">
+          {% endif %}
+        </div>
+        <div class="card-content">
+          <span class="card-title activator">
+            <strong>{{ asset.asset_title }}</strong>
+            <i class="fas fa-chevron-up btn-color right tooltipped" data-position="top" data-tooltip="Read More"></i>
+          </span>
           <a class="btn btn-solid" href="{{ asset.asset_url }}" target="_blank">
             <i class="fas fa-link"></i> Go to site
           </a>
         </div>
+        <!--Card Reveal-->
+        <div class="card-reveal">
+          <!-- Asset Title -->
+          <span class="card-title  center-align">
+            <h5>{{ asset.asset_title }}</h5>
+            <i class="fas fa-chevron-down right btn-color"></i>
+          </span>
+          <!-- Category -->
+          <span>
+            Category: {{ asset.category_name }}
+          </span><br>
+          <!-- Asset Description -->
+          <div>
+            <p>About: {{ asset.asset_description }}</p>
+          </div>
+          <br>
+          <!-- Asset Creator -->
+          <span>
+            Shared By: {{ asset.asset_creator  }}
+          </span><br>
+          <!-- Asset Date -->
+          <span>
+            Added: {{ asset.date_added  }}
+          </span><br>
+          <!-- Site Link -->
+          <div>
+            <a class="btn btn-solid" href="{{ asset.asset_url }}" target="_blank">
+              <i class="fas fa-link"></i> Go to site
+            </a>
+          </div>
+        </div>
       </div>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
-</div>
-{% else %}
-<div class="row">
-  <div class="col s12 m8 offset-m2 grey lighten-4">
-      <h2>Add an Asset to the Dev Pool!</h2>
-  </div>
-</div>
-<div class="row center-align">
-<a href="{{ url_for('create_asset') }}" class="btn-large red darken-4 center-align">Add Asset
-  <i class="fas fa-plus  add-icon"></i>
-</a>
-</div>
-
-{% endif %}
+  {% else %}
+    <div class="row">
+      <div class="col s12 m8 offset-m2">
+        <h2>Add an Asset to the Dev Pool!</h2>
+      </div>
+    </div>
+    <div class="row center-align">
+      <a href="{{ url_for('create_asset') }}" class="btn-large red darken-4 center-align">Add Asset
+        <i class="fas fa-plus  add-icon"></i>
+      </a>
+    </div>
+  {% endif %}
 
 
 {% endblock %}
