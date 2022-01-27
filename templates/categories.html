@@ -15,16 +15,16 @@
 <!-- Display List of Categories -->
 <div class="row">
     {% for category in categories %}
-    <div class="col s12 m3">
-        <div class="card">
+    <div class="col s6 m4 l3">
+        <div class="card-panel">
             <span class="card-title center-align">
                 <h5>{{ category.category_name }}</h5>
             </span>
-            <div class="card-content center-align"> 
-                <!-- Delete Button Modal Trigger -->
-                <a class="btn-solid-red btn modal-trigger" href="#modal{{ loop.index }}">Delete</a>
+            <div class="card-content center-align">
                 <!-- Edit Button -->
-                <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn btn-border">Edit</a>
+                <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn btn-border card-panel-btn">Edit</a>
+                <!-- Delete Button Modal Trigger -->
+                <a class="btn-solid-red btn modal-trigger card-panel-btn" href="#modal{{ loop.index }}">Delete</a>
             </div>
         </div>
     </div>
