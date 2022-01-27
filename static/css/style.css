@@ -36,16 +36,28 @@
 .hero-container {
     background-color: #2D2327;
     width: 100%;
-    height: 80vh;
+    height: auto;
+    padding: 0 2em;
     color: #F0E2E7;
 }
 
-.hero-title {
+/* .hero-title,
+.hero-about {
     margin: 5rem 7rem;
+} */
+
+.large-text {
+    font-size: 20px;
 }
 
 .hero-btns {
-    margin-left: 7rem;
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.hero-btns a {
+    margin: 5px;
 }
 
 /* Home Page Search Area */
