@@ -1,21 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
 
+<!-- Hero Title -->
 <div class="hero-container">
   <div class="row">
-    <div class="col m6 ">
-      <h1 class="hero-title">Tools Created For Your Imagination</h1>
-      <div class="row">
-        <div class="col s6">
+    <div class="col s12 m8">
+      <div class="hero-title">
+        <h1>Tools Created For Your Imagination</h1>
+        <div class="hero-btns">
           <a href="{{ url_for('signIn') }}" class="btn btn-border">Sign In</a>
           <a href="{{ url_for('register')}}" class="btn btn-solid">Register</a>
+        </div>
+      </div>
+    </div>
+    <!-- Hero About -->
+    <div class="col s12 m8">
+      <div class="hero-about">
+        <h2>The Dev Pool</h2>
+        <p class="large-text">A pool of assets some of the best in the business use.
+          Compiled by the Dev Community for the Dev Community.
+        </p>
+        <div class="row">
+          <div class="col s12 center-align">
+            <div class="hero-btns">
+              <a href="#explore" class="btn btn-solid-red">Explore</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<h2 class="center-align">Explore</h2>
+
+<h2 class="center-align" id="explore">Explore</h2>
 
 
 <div class="row ">
