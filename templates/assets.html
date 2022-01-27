@@ -7,10 +7,17 @@
     <div class="col s12 m8">
       <div class="hero-title">
         <h1>Tools Created For Your Imagination</h1>
+        {% if session.user %}
+        <div class="hero-btns" style="display: none;">
+          <a href="{{ url_for('signIn') }}" class="btn btn-border">Sign In</a>
+          <a href="{{ url_for('register')}}" class="btn btn-solid">Register</a>
+        </div>
+        {% else %}
         <div class="hero-btns">
           <a href="{{ url_for('signIn') }}" class="btn btn-border">Sign In</a>
           <a href="{{ url_for('register')}}" class="btn btn-solid">Register</a>
         </div>
+        {% endif %}
       </div>
     </div>
     <!-- Hero About -->
@@ -51,7 +58,7 @@
         {% endif %}
         <!-- Search Bar -->
         <!-- Input -->
-        <div class="input-field col s12 m12 l6">
+        <div class="input-field col s12 m12 l6 offset-l3">
           <i class="fas fa-search prefix"></i>
           <input type="text" name="db_query" id="db_query" minlength="2" class="validate search-bar"
             placeholder="E.g VS Code, Tailwind, Unsplash" required>
