@@ -6,6 +6,10 @@
     color: #fff !important;
 }
 
+.capitalize{
+    text-transform: capitalize;
+}
+
 /* Navbar */
 .nav-black {
     background-color: #2D2327;
@@ -40,11 +44,6 @@
     padding: 0 2em;
     color: #F0E2E7;
 }
-
-/* .hero-title,
-.hero-about {
-    margin: 5rem 7rem;
-} */
 
 .large-text {
     font-size: 20px;
