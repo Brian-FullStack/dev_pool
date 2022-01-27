@@ -16,6 +16,10 @@
     color: #F0E2E7;
 }
 
+.brand-logo{
+    margin-left: 1em;
+}
+
 .nav-btn {
     display: flex;
     align-items: center;
@@ -111,6 +115,10 @@
 .card-image img {
     min-height: 200px;
     max-height: 200px;
+}
+
+.card-panel-btn{
+    margin: 5px;
 }
 
 /* Buttons */
