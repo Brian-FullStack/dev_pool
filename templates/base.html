@@ -27,6 +27,12 @@
               <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
               <ul class="right hide-on-med-and-down">
                 <li class="nav-link"><a href="{{url_for('get_assets')}}">Home</a></li>
+                <!-- Explore Nav Link -->
+                {% if request.path == "/" %}
+                  <li class="nav-link"><a href="#explore">Explore</a></li>
+                {% else %}
+                  <li class="nav-link"><a href="{{ url_for('get_assets', _anchor='explore')}}">Explore</a></li>
+                {% endif %}
                 {% if session.user %}
                   <li class="nav-link"><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                   <li class="nav-link"><a href="{{ url_for('create_asset') }}">Create Asset</a></li>
@@ -46,6 +52,12 @@
           <ul class="sidenav" id="mobile-demo">
             <li class="nav-link"><h4 class="center-align">Dev Pool</h4></li>
             <li class="nav-link"><a href="{{url_for('get_assets')}}">Home</a></li>
+            <!-- Explore Nav Link -->
+            {% if request.path == "/" %}
+              <li class="nav-link"><a href="#explore">Explore</a></li>
+            {% else %}
+              <li class="nav-link"><a href="{{ url_for('get_assets', _anchor='explore')}}">Explore</a></li>
+            {% endif %}
             {% if session.user %}
               <li class="nav-link"><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
               <li class="nav-link"><a href="{{ url_for('create_asset') }}">Create Asset</a></li>
