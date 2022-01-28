@@ -1,16 +1,18 @@
 /** Code from: https://materializecss.com/navbar.html */
 /** Side navigation*/
-$(document).ready(function(){
-    $('.sidenav').sidenav({edge: 'right'});
+$(document).ready(function () {
+  $('.sidenav').sidenav({
+    edge: 'right'
   });
+});
 
 /** Tool Tip */
-  $(document).ready(function(){
-    $('.tooltipped').tooltip();
-  });
+$(document).ready(function () {
+  $('.tooltipped').tooltip();
+});
 
 /** Datepicker & Categories Dropdown */
-$(document).ready(function(){
+$(document).ready(function () {
   $('select').formSelect();
   $('.datepicker').datepicker({
     format: "dd,mmmm,yyyy",
@@ -23,7 +25,7 @@ $(document).ready(function(){
 });
 
 /** Modal Initialization */
-$(document).ready(function(){
+$(document).ready(function () {
   $('.modal').modal();
 });
 
