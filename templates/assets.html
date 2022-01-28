@@ -39,9 +39,9 @@
   </div>
 </div>
 
-
-<h2 class="center-align" id="explore">Explore</h2>
-
+<div id="explore">
+  <h2 class="center-align">Explore</h2>
+</div>
 
 <div class="row">
   <form action="{{ url_for('search_assets') }}" method="POST" class="col s12 m12">
@@ -64,8 +64,10 @@
             placeholder="E.g VS Code, Tailwind, Unsplash" required>
           <label for="db_query">Search</label>
           <!-- Search Clear Buttons -->
-          <button type="submit" class="btn btn-border"><i class="fas fa-search btn-color"></i></button>
-          <a href="{{ url_for('get_assets') }}" class="btn btn-solid-red">Clear</a>
+          <button type="submit" class="btn btn-border">
+            <i class="fas fa-search btn-color"></i>
+          </button>
+          <a href="{{ url_for('get_assets') }}" class="btn btn-solid-red-transparent">Clear</a>
         </div>
       </div>
     </div>
