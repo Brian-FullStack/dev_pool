@@ -63,6 +63,11 @@
     margin: 5px;
 }
 
+/* Explore Heading */
+#explore{
+    padding: 60px;
+}
+
 /* Home Page Search Area */
 .add-asset-btn a {
     font-size: 25px;
@@ -185,6 +190,19 @@ form textarea {
 
 .btn-solid-red:hover {
     background-color: #d71f53;
+    transition: 500ms;
+}
+
+.btn-solid-red-transparent {
+    background-color: transparent;
+    border: 2px solid #d71f53;
+    border-radius: 10px;
+    color: #2D2327;
+}
+
+.btn-solid-red-transparent:hover {
+    background-color: #d71f53;
+    color: #F0E2E7;
     transition: 500ms;
 }
 
