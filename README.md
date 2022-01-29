@@ -1,4 +1,6 @@
 # Dev Pool
+![Device Responsiveness](static/images/README-images/am-i-responsive-dev-pool.png)
+
 Dev Pool is a pool of resources for developers. It is a site where developers can explore assets that might come in useful throughout their career. Dev Pool can also be a great place to share useful assets with others in the community.
 
 ## Inspiration
@@ -29,3 +31,31 @@ This site is aimed at developers who want to find new resources which will help 
 3. As as site owner I want to be able to delete categories.
 4. As as site owner I want to learn about new assets in the community.
 5. As as a site owner I want to share my own assets with the community.
+
+# Design
+This is a multi-page site consisting of 6 pages.
+- Home
+    - Explore Section
+- Profile
+- Create Asset
+- Manage Categories
+- Sign In
+- Register
+
+I used [Materialize CSS](https://materializecss.com/) for many of the UI components in this project such as cards, responsive navigation, modals and forms. This has been my first time using Materialize and overall I enjoyed how responsive its componants are and its ease of use.
+
+## Colors
+The colors in this site simple but wanted to use colors I thought developers might find familiar. I chose a dark grey similiar to that of GitHub or VSCode. I chose a blue/green which I thought felt kinda techy. I chose the off white to reduce eye fatigue for users. I chose the red to signify negitive user actions such as deleting.
+
+I used [Coolors](https://coolors.co/) to help pick the color pallet for this site.
+
+| Color Use  | HEX Code  | Color  |
+|------------|-----------|--------|
+|Buttons & Borders | #6DD3CE | ![#6DD3CE](https://via.placeholder.com/15/6DD3CE/000000?text=+) |
+|Cards, Forms, Hero Container & Dark Headers/Text | #2D2327 | ![#2D2327](https://via.placeholder.com/15/2D2327/000000?text=+) |
+|Background & Light Headers/Text | #F0E2E7 | ![#F0E2E7](https://via.placeholder.com/15/F0E2E7/000000?text=+) |
+|Delete Buttons & Borders | #d71f53 | ![#d71f53](https://via.placeholder.com/15/d71f53/000000?text=+) |
+
+## Images
+The only image used in development of this site is a placeholder image which is put in place when users choose not to upload an image/logo of the asset that they are sharing. I created this placeholder image using [Canva](https://www.canva.com/)
+![Placeholder Image](static/images/DP_image_placeholder_black.png)
