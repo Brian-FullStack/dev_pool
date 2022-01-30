@@ -59,3 +59,43 @@ I used [Coolors](https://coolors.co/) to help pick the color pallet for this sit
 ## Images
 The only image used in development of this site is a placeholder image which is put in place when users choose not to upload an image/logo of the asset that they are sharing. I created this placeholder image using [Canva](https://www.canva.com/)
 ![Placeholder Image](static/images/DP_image_placeholder_black.png)
+
+# Features
+
+## Common Features
+- ### Responsive Navigation
+    - Displayed across all pages directs users through the site.
+    - Displays different links depending on users being signed in or not.
+
+## Feature 1 - Home Page
+- The Home Page is where first time users can register a new account and learn more about the site.
+- For returning users the Home page provides a link to sign in and create new assets.
+- Both registerd and unregistered users have access to the explore section and can view all assets.
+
+## Feature 2 - Explore Section
+- The Explore section is the main section on the site where users get to search and explore all the assets shared by the Dev Pool community.
+- Search Box where users can search for specific assets by category, name or key words. 
+- Registered Users will see the option to Add New Asset beside or under the search box.
+- Each asset is displayed in a card. All cards are consistant in their layout. Displaying the Category, an Image, Name, Link and the option to reveal the description along with when and who the asset was added by.
+- Users who have added assets will also see a button to edit their card in the top right corner.
+
+## Feature 3 - Sign In / Register
+- Both of these pages offer a form for users to complete and once completed successfully will redirect them to their Profile Page.
+
+## Feature 4 - Profile Page
+- This is the first page wusers see when they are signed in.
+- If the user is newly registered or has not yet added any asset to the dev pool then they will have the option to Add New Asset. 
+- If users have already added assets, they will be shown how many they have added and will see all their assets listed below.
+
+## Feature 5 - Create Asset
+- Users who want to share a new asset to the dev pool will be redirected to this form.
+- This is simply a form for users to fill out and add relevant information about the asset such as:
+    - Name
+    - Category
+    - Description
+    - Site URL
+    - Date Added
+    - Site Image
+
+## Feature 6 - Manage Categories (Admin Only)
+- From this page admin can Add, Edit and Delete categories from the dev pool.
