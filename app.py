@@ -1,7 +1,7 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
-    redirect, request, session, url_for)
+   Flask, flash, render_template,
+   redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -76,7 +76,8 @@ def signIn():
             # If user exists, check password matches hashed password
             # Display a message
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                existing_user["password"],
+                    request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
                     flash("Welcome back {}, ".format(
                         request.form.get("username")))
@@ -186,7 +187,8 @@ def edit_category(category_id):
         submit_edit = {
             "category_name": request.form.get("category_name")
         }
-        mongo.db.categories.update_one({"_id": ObjectId(category_id)}, {"$set": submit_edit})
+        mongo.db.categories.update_one(
+            {"_id": ObjectId(category_id)}, {"$set": submit_edit})
         flash("Category Successfully Edited")
         return redirect(url_for('list_categories'))
 
