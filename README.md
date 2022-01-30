@@ -67,12 +67,28 @@ The only image used in development of this site is a placeholder image which is 
     - Displayed across all pages directs users through the site.
     - Displays different links depending on users being signed in or not.
 
+Default Navigation
+![Default Navigation](static/images/README-images/default-nav.png)
+
+Registered User Navigation
+![Registered User Navigation](static/images/README-images/registered-user-nav.png)
+
+Admin Navigation
+![Admin Navigation](static/images/README-images/admin-nav.png)
+
 ## Feature 1 - Home Page
+
+Home Page
+![Home Page](static/images/README-images/home-page.png)
 - The Home Page is where first time users can register a new account and learn more about the site.
 - For returning users the Home page provides a link to sign in and create new assets.
 - Both registerd and unregistered users have access to the explore section and can view all assets.
 
 ## Feature 2 - Explore Section
+
+Explore Section
+![Explore Section](static/images/README-images/explore-page.png)
+
 - The Explore section is the main section on the site where users get to search and explore all the assets shared by the Dev Pool community.
 - Search Box where users can search for specific assets by category, name or key words. 
 - Registered Users will see the option to Add New Asset beside or under the search box.
@@ -80,14 +96,29 @@ The only image used in development of this site is a placeholder image which is 
 - Users who have added assets will also see a button to edit their card in the top right corner.
 
 ## Feature 3 - Sign In / Register
+
+Sign In Page
+![Sign In Page](static/images/README-images/sign-in.png)
+
+Register Page
+![Register Page](static/images/README-images/register.png)
+
 - Both of these pages offer a form for users to complete and once completed successfully will redirect them to their Profile Page.
 
 ## Feature 4 - Profile Page
+
+Profile Page
+![Profile Page](static/images/README-images/profile-page.png)
+
 - This is the first page wusers see when they are signed in.
 - If the user is newly registered or has not yet added any asset to the dev pool then they will have the option to Add New Asset. 
 - If users have already added assets, they will be shown how many they have added and will see all their assets listed below.
 
 ## Feature 5 - Create Asset
+
+Create Asset Page
+![Create Asset Page](static/images/README-images/create-asset-page.png)
+
 - Users who want to share a new asset to the dev pool will be redirected to this form.
 - This is simply a form for users to fill out and add relevant information about the asset such as:
     - Name
@@ -98,4 +129,12 @@ The only image used in development of this site is a placeholder image which is 
     - Site Image
 
 ## Feature 6 - Manage Categories (Admin Only)
+
+Manage Categories
+![Manage Categories Page](static/images/README-images/manage-categories.png)
+
 - From this page admin can Add, Edit and Delete categories from the dev pool.
+
+# Database
+I used [MongoDB](https://www.mongodb.com/) to store and serve the data inputted by users. I chose to use MongoDB because I felt it was more flexiable for this project compared to a relational database like SQL.
+![Database Schema](static/images/README-images/database-schema.png)
