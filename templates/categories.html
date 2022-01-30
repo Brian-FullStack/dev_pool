@@ -17,9 +17,9 @@
     {% for category in categories %}
     <div class="col s6 m4 l3">
         <div class="card-panel">
-            <span class="card-title center-align">
+            <div class="card-title center-align">
                 <h5>{{ category.category_name }}</h5>
-            </span>
+            </div>
             <div class="card-content center-align">
                 <!-- Edit Button -->
                 <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn btn-border card-panel-btn">Edit</a>
