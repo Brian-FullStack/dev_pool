@@ -47,15 +47,15 @@
   <form action="{{ url_for('search_assets') }}" method="POST" class="col s12 m12">
     <div class="row">
       <!-- Add Asset Button-->
-      {% if session.user %}
       <div class="search-area valign-wrapper center-align">
+      {% if session.user %}
         <div class="col s12 m12 l6 add-asset-btn">
           <a href="{{ url_for('create_asset') }}">
             <i class="fas fa-plus btn-color"></i>
             Add Asset
           </a>
         </div>
-        {% endif %}
+      {% endif %}
         <!-- Search Bar -->
         <!-- Input -->
         <div class="input-field col s12 m12 l6 offset-l3">
