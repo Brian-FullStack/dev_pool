@@ -140,3 +140,72 @@ Manage Categories
 # Database
 I used [MongoDB](https://www.mongodb.com/) to store and serve the data inputted by users. I chose to use MongoDB because I felt it was more flexiable for this project compared to a relational database like SQL.
 ![Database Schema](static/images/README-images/database-schema.png)
+
+# Deployment
+
+## Configuring Enviroment Variables
+1. Create a `env.py` file to store senstive information
+2. Create a `.gitignore` file to prevent senstive information from being pushed to GitHub.
+3. Add `env.py` file to the `.gitignore` file
+4. Within the `env.py` file
+```
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "SECRET KEY")
+os.environ.setdefault("MONGO_URI", "MONGODB CONNECTION STRING")
+os.environ.setdefault("MONGO_DBNAME", "DATABASE NAME")
+```
+
+## Deployment to Heroku
+1. To tell Heroku which apps and dependencies are needed to run the app create a `requirements.txt` file 
+``` pip3 freeze --local > requirements.txt ```
+2. Create a Procfile ``` echo web: python app.py > Procfile ```
+3. Go to [Heroku](https://www.heroku.com/)
+4. Click "New" --> "Create New App.
+5. Give the app a unique name (all lowercase with either underscores or minus instead of spaces).
+6. Select a region
+7. Click "Create App"
+8. Navigate to "Deploy"
+9. Select deployment from GitHub
+10. Make sure your GitHub profile is displaying
+11. Search for the correct repo and "Connect"
+12. Got to Settings
+13. Add Config Vars
+14. Add the environment variables hidden in the ```env.py``` file
+
+|||
+|----|----|
+|IP|0.0.0.0|
+|PORT|5000|
+|SECRET_KEY|SECRET KEY|
+|MONGO_URI|MONGODB CONNECTION STRING|
+15. Commit the `requirements.txt` and `Procfile` to Github
+16. Go to [Heroku](https://www.heroku.com/)
+17. Navigate to Deploy
+18.	Enable Automatic Deployment
+19. Deploy Branch
+20. A button will appear if successful
+
+
+Log into your [GitHub](https://github.com/) account.
+
+## Fork the GitHub Repository
+
+1. Log into [GitHub](https://github.com/) and find the repository.
+2. Click the 'Fork' button located in the top right of the page.
+3. This will make a copy of the repository on your own GitHub account.
+
+## Clone this Repository
+
+To make a local clone of this repository follow these steps:
+1. Log into [GitHub](https://github.com/) and find the repository.
+2. Click on the 'Code' button.
+3. To clone the repository using HTTPS, copy the url.
+4. Open Git and change the current working directory to where you want the cloned directory to be made.
+5. In the terminal type 'git clone' followed by the https url.
+6. Press enter
+7. The local clone will be created.
+
+
