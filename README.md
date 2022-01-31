@@ -208,4 +208,67 @@ To make a local clone of this repository follow these steps:
 6. Press enter
 7. The local clone will be created.
 
+# Testing
 
+## Code Validation
+
+### HTML Validation
+I used [W3C Markup Validation Service](https://validator.w3.org/) to validate the HTML Code.
+I initially got a couple of errors such as having a h3 element inside of span, using max instead of maxlength and having an unclosed div. After I fixed these issues the validation came back with only one warning, that being related to the flashed messages.
+
+![HTML Validation](static/images/TESTING-images/html-home-validation.png)
+
+### CSS Validation
+I used [W3C Markup Validation Service](https://validator.w3.org/) to validate the CSS Code.
+I got no errors or warnings.
+
+![CSS Validation](static/images/TESTING-images/css-validation.png)
+
+### Javascript Validation
+I used [JSHint](https://jshint.com/) to validate the JavaScript code.
+This came back with no errors or warnings
+![JavaScript Validation](static/images/TESTING-images/jshint-validation.png)
+
+### Python Validation
+I used [PEP8 Online Checker](http://pep8online.com/) to check that my python code conformed to PEP8 best practices.
+This came back with no warnings or errors
+![Python Validation](static/images/TESTING-images/pep8-validation.png)
+
+## Lighthouse Testing
+- Home Page
+![Home Page Lighthouse Results](static/images/TESTING-images/lighthouse-home-page.png)
+
+- Home Page Mobile
+![Home Page Lighthouse Results](static/images/TESTING-images/lighthouse-home-page-mobile.png)
+
+- Profile Page
+![Profile Page Lighthouse Results](static/images/TESTING-images/lighthouse-profile-page.png)
+
+- Profile Page Mobile
+![Profile Page Mobile Lighthouse Results](static/images/TESTING-images/lighthouse-profile-page-mobile.png)
+
+- Create Asset Page
+![Create Asset Lighthouse Results](static/images/TESTING-images/lighthouse-create-asset.png)
+
+- Create Asset Page Mobile
+![Create Asset Mobile Lighthouse Results](static/images/TESTING-images/lighthouse-create-asset-mobile.png)
+
+- Categories
+![Categories Lighthouse Results](static/images/TESTING-images/lighthouse-create-asset-mobile.png)
+
+- Categories Mobile
+![Categories Mobile Lighthouse Results](static/images/TESTING-images/lighthouse-create-asset-mobile.png)
+
+- Create Category
+![Create Category Lighthouse Results](static/images/TESTING-images/lighthouse-create-category.png)
+
+- Create Category Mobile
+![Create Category Mobile Lighthouse Results](static/images/TESTING-images/lighthouse-create-category-mobile.png)
+
+- Sign In Page
+![Sign In Page Lighthouse Results](static/images/TESTING-images/lighthouse-sign-in.png)
+
+- Sign In Page Mobile
+![Sign In Page Mobile Lighthouse Results](static/images/TESTING-images/lighthouse-sign-in-mobile.png)
+
+## Testing User Stories
