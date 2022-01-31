@@ -5,7 +5,7 @@
 
 {% if assets|length > 0 %}
   <!--Form inputs from Materialize Css-->
-  <h5 class="center-align">You've shared {{ assets|length }} assets with the Dev Pool.</h4>
+  <h4 class="center-align">You've shared {{ assets|length }} assets with the Dev Pool.</h4>
     <div class="col s12 m6 add-asset-btn center-align">
       <a href="{{ url_for('create_asset') }}">
         <i class="fas fa-plus btn-color"></i>
