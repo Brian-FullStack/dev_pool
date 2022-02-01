@@ -5,13 +5,35 @@
 
 Dev Pool is a pool of resources for developers. It is a site where developers can explore assets that might come in useful throughout their career. Dev Pool can also be a great place to share useful assets with others in the community.
 
+## Navigation
+[Inspiration](#inspiration)
+
+[UX](#ux)
+- [Project Goals](#project-goals)
+- [User Stories](#user-stories)
+- [Design](#design)
+- [Images](#images)
+
+[Features](#features)
+
+[Database](#database)
+
+[Deployment](#deployment)
+- [Configuring Enviroment Variables](#configuring-enviroment-variables)
+- [Deployment to Heroku](#deployment-to-heroku)
+- [Fork the GitHub Repository](#fork-the-github-repository)
+
+[Testing](#testing)
+- [Code Validation](#codevalidation)
+- [Lighthouse Testing](#lighthouse-testing)
+- [Testing User Stories](#testing-user-stories)
+
 ## Inspiration
 Inspiration for this project came from scrolling through instagram and seeing posts sucdh as "5 resources every developer needs to know" or "Top 10 extensions to improve your coding!"
 
 After creating a file on my computer to save all these assets, I thought having a site where developers can pool their useful resources and share them with the wider community would be a better and very much in the spirit of the dev community.
 
-## Navigation
-
+[Back to Top](#navigation)
 ## UX
 ### Project Goals
 This site is aimed at developers who want to find new resources which will help them in their work. It is also a site where users can share their own resources with the wider developer community.
@@ -33,6 +55,8 @@ This site is aimed at developers who want to find new resources which will help 
 3. As as site owner I want to be able to delete categories.
 4. As as site owner I want to learn about new assets in the community.
 5. As as a site owner I want to share my own assets with the community.
+
+[Back to Top](#navigation)
 
 # Design
 This is a multi-page site consisting of 6 pages.
@@ -61,6 +85,8 @@ I used [Coolors](https://coolors.co/) to help pick the color pallet for this sit
 ## Images
 The only image used in development of this site is a placeholder image which is put in place when users choose not to upload an image/logo of the asset that they are sharing. I created this placeholder image using [Canva](https://www.canva.com/)
 ![Placeholder Image](static/images/DP_image_placeholder_black.png)
+
+[Back to Top](#navigation)
 
 # Features
 
@@ -137,9 +163,13 @@ Manage Categories
 
 - From this page admin can Add, Edit and Delete categories from the dev pool.
 
+[Back to Top](#navigation)
+
 # Database
 I used [MongoDB](https://www.mongodb.com/) to store and serve the data inputted by users. I chose to use MongoDB because I felt it was more flexiable for this project compared to a relational database like SQL.
 ![Database Schema](static/images/README-images/database-schema.png)
+
+[Back to Top](#navigation)
 
 # Deployment
 
@@ -208,6 +238,8 @@ To make a local clone of this repository follow these steps:
 6. Press enter
 7. The local clone will be created.
 
+[Back to Top](#navigation)
+
 # Testing
 
 ## Code Validation
@@ -272,3 +304,5 @@ This came back with no warnings or errors
 ![Sign In Page Mobile Lighthouse Results](static/images/TESTING-images/lighthouse-sign-in-mobile.png)
 
 ## Testing User Stories
+
+[Back to Top](#navigation)
