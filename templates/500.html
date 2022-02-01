@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="center-align">
-  <h1 class="center-align">500</h1>
-  <h2 class="center-align">Oh No! Something went wrong</h2>
-  <p>The Devs are working getting things back up and running!</p>
-  <a href="{{url_for('get_assets')}}">Home</a>
+<div class="row">
+  <div class="col s12 m4 l6 offset-m4 offset-l3 center-align">
+    <div class="error-box">
+      <h1 class="center-align">!!! 500 !!!</h1>
+      <h2 class="center-align">Oh No! Something went wrong!</h2>
+      <p>Don't worry we are working on it!</p>
+      <a href="{{url_for('get_assets')}}" class="btn btn-solid">Home</a>
+    </div>
+  </div>
 </div>
 
 
