@@ -115,7 +115,7 @@ def signOut():
     return redirect(url_for("signIn"))
 
 
-#Create New Asset
+# Create New Asset
 @app.route("/create_asset", methods=["GET", "POST"])
 def create_asset():
     if request.method == "POST":

@@ -353,7 +353,9 @@ Users can create a profile by using the register button located in the nav bar o
 
 Signed in users will be able to see how many assets they have uploaded to the dev pool by acessing their profile from the nav bar.
 
+
 ### Site Owner Goals
+
 |||
 |---|---|
 |1. |As a site owner I want to create new categpries as needed.|
@@ -384,5 +386,76 @@ Admin can avail of the entire catalogue of resources in the dev pool using the E
 
 Admin will have the option to share their own resources with the community. This can be done from the main navigation, their profile page or the top of the explore section. 
 
+[Back to Top](#navigation)
+
+## Bugs in Development
+Bug - First category in the list being deleted no matter what one was selected.
+
+(I fixed this using a thread by igor_ci on the code institute slack channel.)
+
+Fix - I had to give each modal and delete button a unique id. I did this by putting the category and the delete button in a jinja for loop and adding {{ loop.index }} to bothe the moadal and button.
+```
+     <!-- Delete Button Modal Trigger -->
+
+    <a class="btn-solid-red btn modal-trigger card-panel-btn" href="#modal{{ loop.index }}">Delete</a>
+
+     <!-- Modal Structure -->
+
+    <div id="modal{{ loop.index }}" class="modal">
+    ...
+    <!-- Modal Content -->
+    ...
+    </div>
+
+```
+
+Bug - When I clicked the explore link in the nav bar from any page other than home page the link would work correctly but when I clicked the link from the home page the link didn't work.
+
+I found the fix for this using stack overflow [Here](https://stackoverflow.com/questions/65297198/is-there-a-way-to-go-to-a-specific-part-of-html-page-with-flask).
+
+Fix - I used a combination of a jinja if statement to check if user is on the home page or not. If the user was I simply used an `<a>` link with the href set to #explore. If the user was not I used the url_for with an _anchor set to explore.
+```
+<!-- Explore Nav Link -->
+
+{% if request.path == "/" %}
+    <li class="nav-link"><a href="#explore">Explore</a></li>
+{% else %}
+    <li class="nav-link"><a href="{{ url_for('get_assets', _anchor='explore')}}">Explore</a></li>
+{% endif %}
+
+```
+
+Bug - I had trouble updating assets on the database.
+
+Thanks to John a tutor from Code Institute for helping me with this bug
+
+Fix - I had to use the [$set operator](https://docs.mongodb.com/manual/reference/operator/update/set/) to replace the existing values in the DB with the new values. This initially didn't work because I was using the update() function which is depreciated. I instead had to use update_one() which worked.
+
+```
+# Edit Asset
+
+@app.route("/edit_asset/<asset_id>", methods=["GET", "POST"])
+def edit_asset(asset_id):
+    if request.method == "POST":
+        submit = {
+            "category_name": request.form.get("category_name"),
+            "asset_title": request.form.get("asset_title"),
+            "asset_description": request.form.get("asset_description"),
+            "asset_url": request.form.get("asset_url"),
+            "date_added": request.form.get("date_added"),
+            "asset_image": request.form.get("asset_image"),
+            "asset_creator": session["user"]
+        }
+        mongo.db.assets.update_one(
+            {"_id": ObjectId(asset_id)}, {"$set": submit})
+        flash("{} Updated Successfully".format(
+            request.form.get("asset_title")))
+        return redirect(url_for('get_assets'))
+
+    asset = mongo.db.assets.find_one({"_id": ObjectId(asset_id)})
+    categories = mongo.db.categories.find().sort("category_name", 1)
+    return render_template(
+        "edit_asset.html", asset=asset, categories=categories)
+```
 
 [Back to Top](#navigation)
