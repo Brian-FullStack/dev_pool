@@ -22,6 +22,7 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+# Home Page
 @app.route("/")
 @app.route("/get_assets")
 def get_assets():
@@ -29,6 +30,7 @@ def get_assets():
     return render_template('assets.html', assets=assets)
 
 
+# Search Assets
 @app.route("/search_assets", methods=["GET", "POST"])
 def search_assets():
     db_query = request.form.get("db_query")
@@ -36,6 +38,7 @@ def search_assets():
     return render_template('assets.html', assets=assets)
 
 
+# Register
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -65,6 +68,7 @@ def register():
     return render_template("register.html")
 
 
+# Sign In
 @app.route("/signIn", methods=["GET", "POST"])
 def signIn():
     if request.method == "POST":
@@ -94,6 +98,7 @@ def signIn():
     return render_template("signin.html")
 
 
+# Display username and users assets in profile page
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     username = mongo.db.users.find_one(
@@ -110,6 +115,7 @@ def signOut():
     return redirect(url_for("signIn"))
 
 
+#Create New Asset
 @app.route("/create_asset", methods=["GET", "POST"])
 def create_asset():
     if request.method == "POST":
@@ -131,6 +137,7 @@ def create_asset():
     return render_template("create_asset.html", categories=categories)
 
 
+# Edit Asset
 @app.route("/edit_asset/<asset_id>", methods=["GET", "POST"])
 def edit_asset(asset_id):
     if request.method == "POST":
@@ -155,6 +162,7 @@ def edit_asset(asset_id):
         "edit_asset.html", asset=asset, categories=categories)
 
 
+# Delete asset from DB
 @app.route("/delete_asset/<asset_id>")
 def delete_asset(asset_id):
     mongo.db.assets.delete_one({"_id": ObjectId(asset_id)})
@@ -162,12 +170,14 @@ def delete_asset(asset_id):
     return redirect(url_for("get_assets"))
 
 
+# List all categories
 @app.route("/list_categories")
 def list_categories():
     categories = list(mongo.db.categories.find().sort("category_name", 1))
     return render_template("categories.html", categories=categories)
 
 
+# Create Category
 @app.route("/create_category", methods=["GET", "POST"])
 def create_category():
     if request.method == "POST":
@@ -181,6 +191,7 @@ def create_category():
     return render_template("create_category.html")
 
 
+# Edit a Category
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     if request.method == "POST":
@@ -196,18 +207,21 @@ def edit_category(category_id):
     return render_template("edit_category.html", category=category)
 
 
+# Delete Category
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     mongo.db.categories.delete_one({"_id": ObjectId(category_id)})
     flash("Successfully Deleted!")
     return redirect(url_for("list_categories"))
 
-
+# Error handeling code from https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
+# 404 Page Not Found
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template("404.html", error=error), 404
 
 
+# 500 Internal server error
 @app.errorhandler(500)
 def server_error(error):
     return render_template("500.html", error=error), 500
