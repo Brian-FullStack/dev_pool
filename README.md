@@ -28,6 +28,8 @@ Dev Pool is a pool of resources for developers. It is a site where developers ca
 - [Lighthouse Testing](#lighthouse-testing)
 - [Testing User Stories](#testing-user-stories)
 
+[Technologies, Languages & Frameworks](#technologies)
+
 ## Inspiration
 Inspiration for this project came from scrolling through instagram and seeing posts sucdh as "5 resources every developer needs to know" or "Top 10 extensions to improve your coding!"
 
@@ -164,6 +166,20 @@ Manage Categories
 - From this page admin can Add, Edit and Delete categories from the dev pool.
 
 [Back to Top](#navigation)
+
+## Future Features
+Like Button
+- I would like to add a button where users can see how many developers have liked an asset.
+
+Pagination
+- I would like to add pagination in the future. It will make it easier for users to navigate the site as more assets are added to the dev pool.
+
+Featured Assets
+- I would like to create a carousel of some of the most liked assets in the dev pool.
+
+Newsletter / Monthly Updates Sign Up
+- I would like to develop a way for users to subscribe to get automated monthly updates on some of the newest assets added to the dev pool.
+
 
 # Database
 I used [MongoDB](https://www.mongodb.com/) to store and serve the data inputted by users. I chose to use MongoDB because I felt it was more flexiable for this project compared to a relational database like SQL.
