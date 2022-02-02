@@ -309,49 +309,49 @@ This came back with no warnings or errors
 |---|---|
 |1. |As a user I want to find useful resources related to software development.|
 
-Users can find useful resources in the dev pool by using the "Explore" button in the nav bar or the hero box. This will bring them to the Explore section where they can brouse all assets shared by the community.
+- Users can find useful resources in the dev pool by using the "Explore" button in the nav bar or the hero box. This will bring them to the Explore section where they can brouse all assets shared by the community.
 
 |||
 |---|---|
 |2. |As a user I want to share useful resources with the community|
 
-Any user that registers an account will have the option to share resources with the community. This can be done from the main navigation, their profile page or the top of the explore section.
+- Any user that registers an account will have the option to share resources with the community. This can be done from the main navigation, their profile page or the top of the explore section.
 
 |||
 |---|---|
 |3. |As a user I want to easially navigate to an interesting assets site.|
 
-Users have the option on each card to navigate to the asset site by clicking the "GO to Site" button on the card front and within the card reveal.
+- Users have the option on each card to navigate to the asset site by clicking the "GO to Site" button on the card front and within the card reveal.
 
 |||
 |---|---|
 |4. |As a user I want to have the option to delete the  assets that I upload|
 
-Users who upload an asset will have the option to delete it by clicking on the "Edit" button in the top right of the asset card. This will pop up the edit form with the option to delete the asset at the bottom. On user click a modal will pop up to make sure that the user wants to delete that asset to prevent an accidental delete.
+- Users who upload an asset will have the option to delete it by clicking on the "Edit" button in the top right of the asset card. This will pop up the edit form with the option to delete the asset at the bottom. On user click a modal will pop up to make sure that the user wants to delete that asset to prevent an accidental delete.
 
 |||
 |---|---|
 |5. |As a user I want the option to edit the assets that I upload.|
 
-Users have the option to edit their  assets by using the "Edit" button in the top right of the card. This opens up a form and users will be able to update the information on the card.
+- Users have the option to edit their  assets by using the "Edit" button in the top right of the card. This opens up a form and users will be able to update the information on the card.
 
 |||
 |---|---|
 |6. |As a user I want to be able to search for specific assets.|
 
-The search bar at the top of the Explore section will allow users to search assets by Name, Category or Keyword.
+- The search bar at the top of the Explore section will allow users to search assets by Name, Category or Keyword.
 
 |||
 |---|---|
 |7. |As a user I want to be able to create a profile.|
 
-Users can create a profile by using the register button located in the nav bar or in the hero container. A profile will be created using the name that they registered with and will display a button to encourage them to share a new asset with the community.
+- Users can create a profile by using the register button located in the nav bar or in the hero container. A profile will be created using the name that they registered with and will display a button to encourage them to share a new asset with the community.
 
 |||
 |---|---|
 |8. |As a user I want to be able to view all the assets that I have uploaded.|
 
-Signed in users will be able to see how many assets they have uploaded to the dev pool by acessing their profile from the nav bar.
+- Signed in users will be able to see how many assets they have uploaded to the dev pool by acessing their profile from the nav bar.
 
 
 ### Site Owner Goals
@@ -360,31 +360,31 @@ Signed in users will be able to see how many assets they have uploaded to the de
 |---|---|
 |1. |As a site owner I want to create new categpries as needed.|
 
-Using the "Manage Categories" link in the nav bar admin can create new categories using the "Add Category" button at the top of the page.
+- Using the "Manage Categories" link in the nav bar admin can create new categories using the "Add Category" button at the top of the page.
 
 |||
 |---|---|
 |2. |As as site owner I want to be able to edit categories.|
 
-Admin can edit each category using the blue "Edit" button located in each category card.
+- Admin can edit each category using the blue "Edit" button located in each category card.
 
 |||
 |---|---|
 |3. |As as site owner I want to be able to delete categories.|
 
-Admin can delete any category using the red "Delete" button located in each category card.
+- Admin can delete any category using the red "Delete" button located in each category card.
 
 |||
 |---|---|
 |4. |As as site owner I want to learn about new assets in the community.|
 
-Admin can avail of the entire catalogue of resources in the dev pool using the Explore button in the nav bar and browsing through the assets.
+- Admin can avail of the entire catalogue of resources in the dev pool using the Explore button in the nav bar and browsing through the assets.
 
 |||
 |---|---|
 |5. |As as a site owner I want to share my own assets with the community.|
 
-Admin will have the option to share their own resources with the community. This can be done from the main navigation, their profile page or the top of the explore section. 
+- Admin will have the option to share their own resources with the community. This can be done from the main navigation, their profile page or the top of the explore section. 
 
 [Back to Top](#navigation)
 
@@ -457,5 +457,32 @@ def edit_asset(asset_id):
     return render_template(
         "edit_asset.html", asset=asset, categories=categories)
 ```
+
+[Back to Top](#navigation)
+
+# Technologies
+### Languages
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) is used for creating the structure of the site.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) is used for adding custom styling.
+- [JavaScript](https://www.javascript.com/) used to add logic to the site and initialize materialize css componants.
+- [Python](https://www.python.org/) is used to add functionality to the pages and for acessing the database.
+
+### Frameworks, Libaries and Programs
+- [MaterializeCSS](https://materializecss.com/) is used to add responsiveness and styling to the site.
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/) used as a python framework
+- [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) used for templating.
+- [MongoDB](https://www.mongodb.com/) used for the database.
+- [Heroku](https://id.heroku.com/login) used to deploy the site.
+- [jQuery](https://jquery.com/) a JavaScript libary used to make the site interactive.
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/) used to create secure user authentication.
+- [RandomKeygen](https://randomkeygen.com/) is used to create the secret key used in the env.py file
+- [Font Awsome](https://fontawesome.com/) used for icons
+- [Coolors](https://coolors.co/) used to create the color palette
+- [GitHub](https://github.com/) is used as a remote repository for the projects source code.
+- [Git](https://git-scm.com/) was used to commit and push the code to GitHub.
+- [Gitpod](https://www.gitpod.io/) used as the development environment.
+- [Am I Responsive](http://ami.responsivedesign.is/) used to create the responsive image at the top of the README.
+
+
 
 [Back to Top](#navigation)
