@@ -499,6 +499,23 @@ def edit_asset(asset_id):
 - [Gitpod](https://www.gitpod.io/) used as the development environment.
 - [Am I Responsive](http://ami.responsivedesign.is/) used to create the responsive image at the top of the README.
 
+[Back to Top](#navigation)
 
+# Credits
+### Code
+- [Code Institute](https://codeinstitute.net/global/) was a fantastic resource for learning throughout this project. Using the Task manager Mini Project lessons helped me through many parts of this project.
+
+- The code to fix the issue with no validation Materialize dropdown was taken from [Code Institutes](https://codeinstitute.net/global/) Mini Project lesson on Materialize Form Validation
+
+- The code to initialize Materialize interactive elements on the site was taken from the [Materialize Documentation](https://materializecss.com/).
+
+- Code for error handling was taken from [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/).
+
+## Acknowledgements
+I would like to say a huge thank you to all the Code Institute Tutors for their help along the way. They have been fantastic with their patience and knowledge in helping me with any difficulties I faced.
+
+I would like to say thank you to Code Institute for providing me with an exceptional program and learning resource.
+
+A huge thank you to everyone on the course Slack Channels who have been very suportive and helpful.
 
 [Back to Top](#navigation)
