@@ -12,6 +12,7 @@ Dev Pool is a pool of resources for developers. It is a site where developers ca
 - [Project Goals](#project-goals)
 - [User Stories](#user-stories)
 - [Design](#design)
+- [Wireframes](#wireframes)
 - [Images](#images)
 
 [Features](#features)
@@ -29,6 +30,8 @@ Dev Pool is a pool of resources for developers. It is a site where developers ca
 - [Testing User Stories](#testing-user-stories)
 
 [Technologies, Languages & Frameworks](#technologies)
+
+[Credits](#credits)
 
 ## Inspiration
 Inspiration for this project came from scrolling through instagram and seeing posts sucdh as "5 resources every developer needs to know" or "Top 10 extensions to improve your coding!"
@@ -71,6 +74,19 @@ This is a multi-page site consisting of 6 pages.
 - Register
 
 I used [Materialize CSS](https://materializecss.com/) for many of the UI components in this project such as cards, responsive navigation, modals and forms. This has been my first time using Materialize and overall I enjoyed how responsive its componants are and its ease of use.
+
+## Wireframes
+I used [figma](https://www.figma.com/) to create high fidelity wireframes.
+
+[Home Page](static/images/README-images/home-page-wireframe.png)
+
+[Sign In / Register](static/images/README-images/sign-in-wireframe.png)
+
+[Profile](static/images/README-images/profile-wireframe.png)
+
+[Create Asset](static/images/README-images/create-asset-wireframe.png)
+
+[Manage Categories](static/images/README-images/create-cat-wireframe.png)
 
 ## Colors
 The colors in this site simple but wanted to use colors I thought developers might find familiar. I chose a dark grey similiar to that of GitHub or VSCode. I chose a blue/green which I thought felt kinda techy. I chose the off white to reduce eye fatigue for users. I chose the red to signify negitive user actions such as deleting.
@@ -180,6 +196,7 @@ Featured Assets
 Newsletter / Monthly Updates Sign Up
 - I would like to develop a way for users to subscribe to get automated monthly updates on some of the newest assets added to the dev pool.
 
+[Back to Top](#navigation)
 
 # Database
 I used [MongoDB](https://www.mongodb.com/) to store and serve the data inputted by users. I chose to use MongoDB because I felt it was more flexiable for this project compared to a relational database like SQL.
@@ -282,6 +299,7 @@ I used [PEP8 Online Checker](http://pep8online.com/) to check that my python cod
 This came back with no warnings or errors
 ![Python Validation](static/images/TESTING-images/pep8-validation.png)
 
+[Back to Top](#navigation)
 ## Lighthouse Testing
 - Home Page
 ![Home Page Lighthouse Results](static/images/TESTING-images/lighthouse-home-page.png)
@@ -318,6 +336,8 @@ This came back with no warnings or errors
 
 - Sign In Page Mobile
 ![Sign In Page Mobile Lighthouse Results](static/images/TESTING-images/lighthouse-sign-in-mobile.png)
+
+[Back to Top](#navigation)
 
 ## Testing User Stories
 ### User Goals
@@ -369,6 +389,7 @@ This came back with no warnings or errors
 
 - Signed in users will be able to see how many assets they have uploaded to the dev pool by acessing their profile from the nav bar.
 
+[Back to Top](#navigation)
 
 ### Site Owner Goals
 
@@ -498,6 +519,8 @@ def edit_asset(asset_id):
 - [Git](https://git-scm.com/) was used to commit and push the code to GitHub.
 - [Gitpod](https://www.gitpod.io/) used as the development environment.
 - [Am I Responsive](http://ami.responsivedesign.is/) used to create the responsive image at the top of the README.
+
+- [Figma](https://www.figma.com/) used for creating wireframes.
 
 [Back to Top](#navigation)
 
