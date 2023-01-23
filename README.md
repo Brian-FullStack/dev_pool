@@ -1,7 +1,7 @@
 # Dev Pool
 ![Device Responsiveness](static/images/README-images/am-i-responsive-dev-pool.png)
 
-## [Live Site](https://dev-pool-ci.herokuapp.com/)
+## [Live Site](https://dev-pool.onrender.com/get_assets)
 
 Dev Pool is a pool of resources for developers. It is a site where developers can explore assets that might come in useful throughout their career. Dev Pool can also be a great place to share useful assets with others in the community.
 
